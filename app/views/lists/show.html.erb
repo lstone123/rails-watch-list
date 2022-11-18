@@ -1,0 +1,20 @@
+<div class="navbar-lewagon">
+  <%= link_to "My lists",  lists_path %>
+  <%= link_to "New list",  new_list_path %>
+</div>
+
+<div class="container">
+  <h1><%= @list.name %></h1>
+
+  <%= link_to "add a movie", new_list_bookmark_path(@list) %>
+
+  <div>
+    <% @list.bookmarks.each do |bookmark|  %>
+    <h3><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> ⭐️</h3>
+    <p><%= bookmark.movie.overview %></p>
+    </p>"<%= bookmark.comment %></p>
+    <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" } %>
+    <% end %>
+  </div>
+
+</div>

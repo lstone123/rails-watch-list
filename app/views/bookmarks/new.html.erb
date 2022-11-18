@@ -1,0 +1,10 @@
+<div class="navbar-lewagon">
+  <%= link_to "My lists",  lists_path %>
+  <%= link_to "New list",  new_list_path %>
+</div>
+<h1>Welcome to the New Bookmark page</h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit %>
+  <% end %>

@@ -1,0 +1,20 @@
+<div class="navbar-lewagon">
+  <%= link_to "My lists",  lists_path %>
+  <%= link_to "New list",  new_list_path %>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(movie_image.jpeg);">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+    </div>
+</div>
+
+<h2>My Lists</h2>
+<%= link_to "Create a new movie list",  new_list_path %>
+</div>
+<div>
+  <div>
+    <% @lists.each do |list| %>
+    <h3><%= link_to "#{list.name}", list_path(list) %></h3>
+    <% end %>
+  </div>
+</div>
